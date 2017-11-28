@@ -1,11 +1,8 @@
-package com.common.pageobjects;
+package com.common.pageobject;
 
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.chrome.ChromeDriver;
-
-import java.util.EmptyStackException;
 
 public class WebDriverDeploy {
 
