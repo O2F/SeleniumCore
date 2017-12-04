@@ -1,28 +1,16 @@
 package other;
 
-import com.common.pageobjects.PageObjects;
-import com.common.pageobjects.WebDriverDeploy;
-import org.junit.Before;
+import com.common.page.interations.Checkbox;
+import com.common.pageobject.FunctionalTestLifecycle;
+import com.common.pageobject.PageObject;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-import java.util.Set;
-
-public class MyTest extends Exception{
-
-    //private static WebDriver driver;
-    //WebElement element;
-
-    @BeforeClass
-    public static void setDriver(){
-        //driver = new WebDriverDeploy().setWebdriver("Chrome");
-    }
-
+public class MyTest extends FunctionalTestLifecycle{
+    /*
     @Test
     public void myteste(){
         System.out.println("teste");
@@ -30,8 +18,22 @@ public class MyTest extends Exception{
 
     @Test
     public void test2(){
-       // driver.get("http://www.google.com");
+        driver.get("http://www.google.com");
         //pageObjects.gotoPage("http://www.google.com");
 
+    }
+     */
+
+    @Test
+    public void searchBar(){
+        driver.get("http://www.google.com");
+        PageObject po = new PageObject("Chrome");
+
+        Checkbox cb = new Checkbox(po.getElement("AAA"));
+
+        //SearchBar searchBar = new SearchBar(driver);
+        //driver.findElement(By.id("lst-ib")).click();
+
+        //searchBar.enterString("Teste");
     }
 }
