@@ -10,7 +10,7 @@ public class FunctionalTestLifecycle {
     /**
      * Class representing a test suite lifecycle operations prior and posterior to the tests
      */
-    protected static WebDriver driver;
+    public static PageObject driver = new PageObject("Chrome");
 
     @BeforeClass
     public static void suiteSetUp(){
@@ -18,7 +18,9 @@ public class FunctionalTestLifecycle {
          * This method setups the initial test suite
          * It serves as the bare minimum for the setup
          */
-        driver = new WebDriverDeploy().setWebdriver("Chrome");
+        System.out.println("teste");
+
+        //driver = new WebDriverDeploy().setWebdriver("Chrome");
         //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 

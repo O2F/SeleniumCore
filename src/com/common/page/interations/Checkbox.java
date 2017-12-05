@@ -16,6 +16,26 @@ public class Checkbox {
         this.element = element;
     }
 
+    public boolean isChecked(){
+        return element.isSelected();
+    }
+
+    public void toggle(){
+        element.click();
+    }
+
+    public void check(){
+        if (!isChecked()){
+            toggle();
+        }
+    }
+
+    public void uncheck(){
+        if (isChecked()){
+            toggle();
+        }
+    }
+
 
 
 }

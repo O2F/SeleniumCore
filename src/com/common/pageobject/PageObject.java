@@ -10,7 +10,8 @@ public class PageObject {
     protected WebDriver driver;
 
     public PageObject(String  driver){
-        //this.driver = driver; //new WebDriverDeploy().setWebdriver("Chrome");
+
+        //this.driver = new WebDriverDeploy().setWebdriver("Chrome");
         this.driver = new WebDriverDeploy().setWebdriver(driver);
         PageFactory.initElements(this.driver,this);
     }
@@ -44,7 +45,8 @@ public class PageObject {
                      return null;
             }
         }catch (NoSuchElementException e){
-            return elementLocatorType(locatorName, count++);
+            //System.out.println(count);
+            return elementLocatorType(locatorName, ++count);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -52,28 +54,7 @@ public class PageObject {
 
     }
 
-    /*
-    public WebElement getElement(String locatorName){
-        try{
-            this.driver.findElement(By.id(locatorName));
-        }catch (NoSuchElementException e){
-            try{
-                this.driver.findElement(By.name(locatorName));
-            }catch (NoSuchElementException a){
-                try {
-                    this.driver.findElement(By.xpath(locatorName));
-                }catch (NoSuchElementException b){
-                    try{
-                        this.driver.findElement(By.cssSelector(locatorName))
-                    }catch (NoSuchElementException c){
-                        System.out.println("Error finding element");
-                    }
-
-                }
-            }
-
-        }
-
+    public void close(){
+        this.driver.close();
     }
-    */
 }

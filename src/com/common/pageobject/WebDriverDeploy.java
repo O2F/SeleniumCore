@@ -6,11 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverDeploy {
 
-    public WebDriver setWebdriver(String webDriverName){
+    public static WebDriver setWebdriver(String webDriverName){
 
         switch(webDriverName){
             case "chrome": case "Chrome": case "CHROME":
-                System.setProperty("webdriver.chrome.driver","/home/hpfernandes/Downloads/chromedriver");
+                System.setProperty("webdriver.chrome.driver","C:\\Users\\hugof\\Desktop\\selenium\\chromedriver.exe");
                 WebDriver driver = new ChromeDriver();
                 return driver;
             default:
